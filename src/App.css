@@ -1,42 +1,160 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  font-family: Ubuntu-Bold, Ubuntu-Regular;
+  background-color: #e5edf5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-container {
+  display: flex;
+  max-width: 700px;
+  max-height: 800px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.steps-sidebar {
+  background-image: url('./images/bg-sidebar-desktop.svg'); /* Path to your SVG image */
+  background-size: cover; /* Ensure the image covers the entire area */
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
 }
 
-.card {
-  padding: 2em;
+
+.step {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding: 1px;
 }
 
-.read-the-docs {
-  color: #888;
+.step-number {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid rgb(129, 172, 230);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.step-label {
+  display: flex;
+  flex-direction: column; /* Stack title and name vertically */
+}
+
+.step-title {
+  font-size: 10px;
+  color: #d0cdfd;
+  letter-spacing: 1px;
+}
+
+.step-name {
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 2px; /* Small margin for spacing */
+}
+
+.active .step-number {
+  background-color: #bfcdfd; /* Light blue background for active step */
+  color: #2d2b58;
+  border-color: #bfcdfd;
+}
+
+.active .step-name {
+  color: rgb(255, 255, 255);
+}
+
+.active .step-title {
+  color: #bfcdfd;
+}
+
+.form-content {
+padding-left: 50px;
+padding-top: 8px;
+padding-bottom: 30px;
+width: 100%;
+}
+
+.form-group{
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+/* Div for Title and Description */
+
+h2 {
+  color: #141144;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+p {
+  color: #666;
+  font-size: 12px;
+  padding-bottom: 30px;
+  margin-top: 0;
+}
+
+/* Div for the form input fields */
+.form-inputs {
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  color: #141144;
+}
+
+input {
+  width: 75%;
+  padding: 8px;
+  margin-bottom: 1px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+input:focus {
+  border-color: #9faff7;
+  outline: none;
+}
+
+.error {
+  color: red;
+  display: block; /* Display when there's an error */
+}
+
+/* Div for the button */
+.form-footer {
+  padding: 40px;
+  padding-right: 80px;
+}
+
+button {
+  background-color: #2d5385 !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 10px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #376481; /* Slightly darker blue on hover */
 }
