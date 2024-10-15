@@ -1,22 +1,5 @@
-import { useState } from "react";
 
 function Page1() {
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
-    const [error, setError] = useState(false);
-  
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.id]: e.target.value });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (formData.phone === "") {
-        setError(true);
-      } else {
-        setError(false);
-        // Proceed to the next step or handle the data
-      }
-    };
   
     return (
         <div className="form-container">
@@ -53,19 +36,7 @@ function Page1() {
             </div>
           </div>
         </div>
-
-        <div className="form-content">
-
-<div className="form-header">
-    
-</div>
-
-<form >
-
-</form>
-
-</div>
-</div>
+        </div>
     );
   }
   
