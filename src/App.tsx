@@ -1,10 +1,11 @@
 import './App.css'
+import MainLayout from './layout/MainLayout'
 
 function App() {
 
   return (
     <>
-     <h1>hello world!</h1>
+    <MainLayout/>
     </>
   )
 }
