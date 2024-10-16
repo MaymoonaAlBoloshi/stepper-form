@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'; // Use ReactNode for typing children
-import Form from '../components/form';
+import FormStepper from '../components/FormStepper';
 
 type Props = {
     children: ReactNode; // This covers any valid JSX content
@@ -9,7 +9,8 @@ type Props = {
     return (
       <>
         <main>
-          <Form/>
+          {children}
+          <FormStepper/>
         </main>
       </>
     );
