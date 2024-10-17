@@ -8,9 +8,9 @@ type Props = {
   function MainLayout({ children }: Props) {
     return (
       <>
-        <main>
+        <main className="form-container">
+        <FormStepper/>
           {children}
-          <FormStepper/>
         </main>
       </>
     );

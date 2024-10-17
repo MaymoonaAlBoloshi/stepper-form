@@ -1,5 +1,4 @@
-// src/pages/Page1.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Input from '../components/Input';
 
 const Page1 = () => {
@@ -8,9 +7,8 @@ const Page1 = () => {
     email: '',
     phone: '',
     password: '',
-    confirmPassword: '',
   });
-  
+
   const [error, setError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,8 +17,8 @@ const Page1 = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Validate the fields here, e.g., check if passwords match
-    if (formData.password !== formData.confirmPassword || formData.password.length < 8) {
+    // Validate the password length here
+    if (formData.password.length < 8) {
       setError(true);
     } else {
       setError(false);
@@ -29,12 +27,14 @@ const Page1 = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-content">
+    <div className="form-header">
       <h2>Personal info</h2>
       <p>Please provide your name, email address, phone number, and set a password.</p>
-
+      </div>
       <form onSubmit={handleSubmit}>
         <Input
+          name="name" 
           type="text"
           label="Name"
           value={formData.name}
@@ -44,6 +44,7 @@ const Page1 = () => {
         />
         <Input
           type="email"
+          name="email"
           label="Email Address"
           value={formData.email}
           onChange={handleChange}
@@ -52,6 +53,7 @@ const Page1 = () => {
         />
         <Input
           type="tel"
+          name="phone" 
           label="Phone Number"
           value={formData.phone}
           onChange={handleChange}
@@ -60,15 +62,16 @@ const Page1 = () => {
         />
         <Input
           type="password"
+          name="password" 
           label="Password"
           value={formData.password}
           onChange={handleChange}
           required={true}
           placeholder="Enter your password"
         />
-        
-        {error && <span className="error">Passwords do not match or are less than 8 characters</span>}
-        
+
+        {error && <span className="error">Password must be at least 8 characters long</span>}
+
         <div className="form-footer">
           <button type="submit">Next Step</button>
         </div>
