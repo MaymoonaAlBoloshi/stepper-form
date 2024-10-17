@@ -1,21 +1,20 @@
 body {
-  font-family: Ubuntu-Bold, Ubuntu-Regular;
+  font-family: 'Ubuntu', sans-serif; /* Use the correct font family */
   background-color: #e5edf5;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;  /* Center horizontally */
   align-items: center;      /* Center vertically */
 }
 
 .form-container {
-  padding: 300px 200px;
   display: flex;
-  max-width: 300px;
-  max-height: 900px;
+  max-width: 700px;
+  max-height: 800px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 15px;
-  padding-right: 15px;
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
@@ -27,8 +26,7 @@ body {
   background-size: cover; /* Ensure the image covers the entire area */
   border-radius: 8px;
   padding: 20px;
-  width: 300px;
-  height: 600px;
+  width: 250px;
 }
 
 
@@ -60,15 +58,14 @@ body {
 }
 
 .step-title {
-  font-size: 12px;
+  font-size: 10px;
   color: #d0cdfd;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .step-name {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
-  letter-spacing: 1px;
   margin-top: 2px; /* Small margin for spacing */
 }
 
@@ -96,4 +93,68 @@ width: 100%;
 .form-group{
   padding-bottom: 8px;
   font-size: 12px;
+}
+/* Div for Title and Description */
+
+h2 {
+  color: #141144;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+p {
+  color: #666;
+  font-size: 12px;
+  padding-bottom: 30px;
+  margin-top: 0;
+}
+
+/* Div for the form input fields */
+.form-inputs {
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  color: #141144;
+}
+
+input {
+  width: 75%;
+  padding: 8px;
+  margin-bottom: 1px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+input:focus {
+  border-color: #9faff7;
+  outline: none;
+}
+
+.error {
+  color: red;
+  display: block; /* Display when there's an error */
+}
+
+/* Div for the button */
+.form-footer {
+  padding: 40px;
+  padding-right: 80px;
+}
+
+button {
+  background-color: #2d5385 !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 10px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #376481; /* Slightly darker blue on hover */
 }
