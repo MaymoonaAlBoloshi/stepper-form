@@ -1,9 +1,9 @@
-import App from "../App.css";
 
 function FormStepper() {
   
     return (
-        <div className="form-container">
+
+        <div>
         <div className="steps-sidebar">
           <div className="step active">
             <div className="step-number">1</div>
@@ -38,9 +38,7 @@ function FormStepper() {
           </div>
         </div>
         </div>
-        
     );
   }
   
-
 export default FormStepper;
