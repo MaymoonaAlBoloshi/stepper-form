@@ -2,7 +2,7 @@ body {
   font-family: 'Ubuntu', sans-serif; /* Use the correct font family */
   background-color: #e5edf5;
   margin: 0;
-  padding: 200px;
+  padding: 50px;
   display: flex;
   justify-content: center;  /* Center horizontally */
   align-items: center;      /* Center vertically */
@@ -140,7 +140,7 @@ input:focus {
 .error {
   color: red;
   display: block; /* Display when there's an error */
-  font-size: 8px;
+  font-size: 12px;
 }
 
 /* Div for the button */
