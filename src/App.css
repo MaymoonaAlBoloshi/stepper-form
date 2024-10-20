@@ -235,7 +235,7 @@ button:hover {
 
 .plan p {
   font-size: 14px;
-  color: #848b91;
+  color: #6c757d;
   text-align: left;
 }
 
@@ -244,7 +244,7 @@ button:hover {
 }
 
 .plan.selected {
-  background-color: #d1d6e6; /* Dark background for selected plan */
+  background-color: #e7e8ee; /* Dark background for selected plan */
   color: white; /* Change text color for better contrast */
 }
 
