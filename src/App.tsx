@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <MainLayout>
-        <Routes>
-          <Route path='/page1' element={<Page1/>} />
-          <Route path='/page2' element={<Page2/>} />
-        </Routes>
-      </MainLayout>
-    </Router>
+    <MainLayout>
+      <Routes>
+        <Route path="/" element={<Page1 />} /> {/* Root route */}
+        <Route path="/page1" element={<Page1 />} />
+        <Route path="/page2" element={<Page2 />} />
+      </Routes>
+    </MainLayout>
+  </Router>
   );
 }
 
