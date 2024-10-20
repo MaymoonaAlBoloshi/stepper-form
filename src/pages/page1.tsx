@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../components/Input';
 
 const Page1 = () => {
@@ -8,21 +9,20 @@ const Page1 = () => {
     phone: '',
     password: '',
   });
-
+  const navigate = useNavigate(); 
   const [error, setError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate the password length here
     if (formData.password.length < 8) {
       setError(true);
     } else {
       setError(false);
-      // Handle successful form submission
+      navigate('/page2');
     }
   };
 

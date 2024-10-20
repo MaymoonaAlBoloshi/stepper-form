@@ -20,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-
 .steps-sidebar {
   background-image: url('./images/bg-sidebar-desktop.svg'); /* Path to your SVG image */
   background-size: cover; /* Ensure the image covers the entire area */
@@ -29,7 +28,6 @@ body {
   width: 250px;
   height: 550px;
 }
-
 
 .step {
   display: flex; /* Use flexbox for alignment */
@@ -160,4 +158,74 @@ button {
 
 button:hover {
   background-color: #46545e; /* Slightly darker blue on hover */
+}
+
+button.go-back {
+  background-color: transparent;
+  color: #001f3f;
+  border: 1px solid #001f3f;
+}
+
+button.go-back:hover {
+  background-color: #f0f4f8;
+}
+
+/* PAGE 2*/
+
+/* Main Content */
+.main-content {
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+.main-content h1 {
+  font-size: 24px;
+  color: #001f3f;
+}
+
+.main-content p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Plans Section */
+.plans {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.plan {
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.plan img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.plan h2 {
+  font-size: 18px;
+  color: #001f3f;
+}
+
+.plan p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.plan:hover {
+  border-color: #6246ea;
 }
