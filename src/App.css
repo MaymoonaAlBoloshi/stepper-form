@@ -25,13 +25,15 @@ body {
   background-size: cover; /* Ensure the image covers the entire area */
   border-radius: 8px;
   padding: 20px;
-  width: 250px;
-  height: 550px;
+  width: 250px;  /* Fixed width */
+  height: 550px; /* Fixed height */
+  min-height: 550px; 
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 .step {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
   padding: 10px;
@@ -53,7 +55,7 @@ body {
 
 .step-label {
   display: flex;
-  flex-direction: column; /* Stack title and name vertically */
+  flex-direction: column;
 }
 
 .step-title {
@@ -65,7 +67,7 @@ body {
 .step-name {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 1px; /* Small margin for spacing */
+  margin-top: 1px;
 }
 
 .active .step-number {
@@ -83,18 +85,18 @@ body {
 }
 
 .form-content {
-padding-left: 60px;
-padding-top: 20px;
-padding-bottom: 30px;
-width: 100%;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  width: 100%;
 }
 
-.form-group{
+.form-group {
   padding-bottom: 8px;
   font-size: 12px;
 }
-/* Div for Title and Description */
 
+/* Div for Title and Description */
 h2 {
   color: #141144;
   font-size: 24px;
@@ -160,8 +162,6 @@ button:hover {
   background-color: #46545e; /* Slightly darker blue on hover */
 }
 
-
-
 /* PAGE 2 */
 /* Main Content Styles */
 .main-content {
@@ -208,10 +208,10 @@ button:hover {
   width: 120px;
   height: 140px;
   cursor: pointer;
-  transition: border-color 0.3s, background-color 0.3s; /* Added transition for background */
-  background-size: 40px 40px; /* Size for background image */
-  background-repeat: no-repeat; /* Prevents repeating the image */
-  background-position: left 10px top 20px; /* Position the image */
+  transition: border-color 0.3s, background-color 0.3s;
+  background-size: 40px 40px; 
+  background-repeat: no-repeat;
+  background-position: left 10px top 20px;
 }
 
 .plan.arcade {
@@ -245,7 +245,7 @@ button:hover {
 
 .plan.selected {
   background-color: #e7e8ee; /* Dark background for selected plan */
-  color: white; /* Change text color for better contrast */
+  color: white; 
 }
 
 /* Error Message Styles */
@@ -282,4 +282,3 @@ button {
   color: white;
   transition: background-color 0.3s;
 }
-
