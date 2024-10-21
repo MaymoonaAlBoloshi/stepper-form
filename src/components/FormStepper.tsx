@@ -1,44 +1,40 @@
+import { useLocation } from 'react-router-dom';
 
 function FormStepper() {
-  
-    return (
+  const location = useLocation();
 
-        <div>
-        <div className="steps-sidebar">
-          <div className="step active">
-            <div className="step-number">1</div>
-            <div className="step-label">
-              <span className="step-title">STEP 1</span>
-              <span className="step-name">YOUR INFO</span>
-            </div>
-          </div>
-  
-          <div className="step">
-            <div className="step-number">2</div>
-            <div className="step-label">
-              <span className="step-title">STEP 2</span>
-              <span className="step-name">SELECT PLAN</span>
-            </div>
-          </div>
-  
-          <div className="step">
-            <div className="step-number">3</div>
-            <div className="step-label">
-              <span className="step-title">STEP 3</span>
-              <span className="step-name">ADD-ONS</span>
-            </div>
-          </div>
-  
-          <div className="step">
-            <div className="step-number">4</div>
-            <div className="step-label">
-              <span className="step-title">STEP 4</span>
-              <span className="step-name">SUMMARY</span>
-            </div>
-          </div>
-        </div>
-        </div>
-    );
-  }
-  
+  // Step component as props
+  const Step = ({ isActive, title, subText, stepNumber }) => (
+    <div className={`step ${isActive ? 'active' : ''}`}>
+      <div className="step-number">{stepNumber}</div>
+      <div className="step-label">
+        <span className="step-title">{title}</span>
+        <span className="step-name">{subText}</span>
+      </div>
+    </div>
+  );
+
+  // Array of steps with title, subText, url, and stepNumber
+  const steps = [
+    { title: 'STEP 1', subText: 'YOUR INFO', url: '/page1', stepNumber: '1' },
+    { title: 'STEP 2', subText: 'SELECT PLAN', url: '/page2', stepNumber: '2' },
+    { title: 'STEP 3', subText: 'ADD-ONS', url: '/page3', stepNumber: '3' },
+    { title: 'STEP 4', subText: 'SUMMARY', url: '/page4', stepNumber: '4' },
+  ];
+
+  return (
+    <div className="steps-sidebar">
+      {steps.map((step, index) => (
+        <Step
+          key={index}
+          isActive={location.pathname === step.url} // Comparison done here
+          title={step.title}
+          subText={step.subText}
+          stepNumber={step.stepNumber}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default FormStepper;

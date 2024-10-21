@@ -1,16 +1,16 @@
 body {
-  font-family: 'Ubuntu', sans-serif; /* Use the correct font family */
+  font-family: "Ubuntu", sans-serif; /* Use the correct font family */
   background-color: #e5edf5;
   margin: 0;
   padding: 50px;
   display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .form-container {
   display: flex;
-  max-width: 700px;
+  max-width: 900px;
   max-height: 800px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -20,20 +20,19 @@ body {
   overflow: hidden;
 }
 
-
 .steps-sidebar {
-  background-image: url('./images/bg-sidebar-desktop.svg'); /* Path to your SVG image */
+  background-image: url("./images/bg-sidebar-desktop.svg"); /* Path to your SVG image */
   background-size: cover; /* Ensure the image covers the entire area */
   border-radius: 8px;
   padding: 20px;
-  width: 250px;
-  height: 550px;
+  width: 250px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
-
 .step {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
   padding: 10px;
@@ -55,7 +54,7 @@ body {
 
 .step-label {
   display: flex;
-  flex-direction: column; /* Stack title and name vertically */
+  flex-direction: column;
 }
 
 .step-title {
@@ -67,7 +66,7 @@ body {
 .step-name {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 1px; /* Small margin for spacing */
+  margin-top: 1px;
 }
 
 .active .step-number {
@@ -85,18 +84,18 @@ body {
 }
 
 .form-content {
-padding-left: 60px;
-padding-top: 20px;
-padding-bottom: 30px;
-width: 100%;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  width: 100%;
 }
 
-.form-group{
+.form-group {
   padding-bottom: 8px;
   font-size: 12px;
 }
-/* Div for Title and Description */
 
+/* Div for Title and Description */
 h2 {
   color: #141144;
   font-size: 24px;
@@ -108,7 +107,7 @@ p {
   font-size: 12px;
   padding-bottom: 30px;
   margin-top: 0;
-  padding-right: 50px;
+  padding-right: 70px;
 }
 
 /* Div for the form input fields */
@@ -123,9 +122,9 @@ label {
 }
 
 input {
-  width: 75%;
-  padding: 8px;
-  margin-bottom: 1px;
+  width: 400px;
+  padding: 12px;
+  margin-bottom: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #ffffff;
@@ -146,18 +145,139 @@ input:focus {
 /* Div for the button */
 .form-footer {
   padding: 70px;
-  padding-right: 70px;
+  padding-right: 100px;
 }
 
 button {
   background-color: #2d5385 !important;
   border: none;
   border-radius: 8px;
-  font-size: 16px !important;
+  font-size: 16px;
   cursor: pointer;
   float: right;
 }
 
 button:hover {
   background-color: #46545e; /* Slightly darker blue on hover */
+}
+
+/* PAGE 2 */
+/* Main Content Styles */
+.main-content {
+  padding: 20px;
+  max-width: 900px;
+}
+
+/* Header Styles */
+.content-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.content-header h1 {
+  font-size: 24px;
+  color: #001f3f;
+}
+
+.content-header p {
+  color: #6c757d;
+  margin-top: 0px;
+  font-size: 14px;
+}
+
+/* Plans Section */
+.plans-section {
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.plans {
+  display: flex;
+  gap: 20px;
+}
+
+.plan {
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 120px;
+  height: 140px;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: left 10px top 20px;
+}
+
+.plan.arcade {
+  background-image: url("./images/icon-arcade.svg"); /* Background image for Arcade */
+}
+
+.plan.advanced {
+  background-image: url("./images/icon-advanced.svg"); /* Background image for Advanced */
+}
+
+.plan.pro {
+  background-image: url("./images/icon-pro.svg"); /* Background image for Pro */
+}
+
+.plan h2 {
+  font-size: 18px;
+  color: #001f3f;
+  text-align: left;
+  padding-top: 70px;
+}
+
+.plan p {
+  font-size: 14px;
+  color: #6c757d;
+  text-align: left;
+}
+
+.plan:hover {
+  border-color: #998fe2;
+}
+
+.plan.selected {
+  background-color: #e7e8ee; /* Dark background for selected plan */
+  color: white;
+}
+
+/* Error Message Styles */
+.error {
+  color: red;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* Buttons Section */
+.buttons-section {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 70px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.go-back {
+  background-color: transparent !important;
+  color: #2d5385;
+  transition: background-color 0.3s;
+}
+
+.next-step {
+  background-color: #2d5385;
+  color: white;
+  transition: background-color 0.3s;
 }

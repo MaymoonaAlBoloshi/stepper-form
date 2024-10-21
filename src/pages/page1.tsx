@@ -1,40 +1,43 @@
-import { useState } from 'react';
-import Input from '../components/Input';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Input from "../components/Input";
 
 const Page1 = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
   });
-
+  const navigate = useNavigate();
   const [error, setError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate the password length here
     if (formData.password.length < 8) {
       setError(true);
     } else {
       setError(false);
-      // Handle successful form submission
+      navigate("/page2");
     }
   };
 
   return (
     <div className="form-content">
-    <div className="form-header">
-      <h2>Personal info</h2>
-      <p>Please provide your name, email address, phone number, and set a password.</p>
+      <div className="form-header">
+        <h2>Personal info</h2>
+        <p>
+          Please provide your name, email address, phone number, and set a
+          password.
+        </p>
       </div>
       <form onSubmit={handleSubmit}>
         <Input
-          name="name" 
+          name="name"
           type="text"
           label="Name"
           value={formData.name}
@@ -53,7 +56,7 @@ const Page1 = () => {
         />
         <Input
           type="tel"
-          name="phone" 
+          name="phone"
           label="Phone Number"
           value={formData.phone}
           onChange={handleChange}
@@ -62,7 +65,7 @@ const Page1 = () => {
         />
         <Input
           type="password"
-          name="password" 
+          name="password"
           label="Password"
           value={formData.password}
           onChange={handleChange}
@@ -70,7 +73,11 @@ const Page1 = () => {
           placeholder="Enter your password"
         />
 
-        {error && <span className="error">Password must be at least 8 characters long</span>}
+        {error && (
+          <span className="error">
+            Password must be at least 8 characters long
+          </span>
+        )}
 
         <div className="form-footer">
           <button type="submit">Next Step</button>
