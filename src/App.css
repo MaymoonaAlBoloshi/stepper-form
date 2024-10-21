@@ -26,8 +26,7 @@ body {
   border-radius: 8px;
   padding: 20px;
   width: 250px;  /* Fixed width */
-  height: 550px; /* Fixed height */
-  min-height: 550px; 
+  height: 600px; /* Fixed height */
   flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
@@ -150,7 +149,7 @@ input:focus {
 }
 
 button {
-  background-color: #2d5385;
+  background-color: #2d5385 !important;
   border: none;
   border-radius: 8px;
   font-size: 16px;
