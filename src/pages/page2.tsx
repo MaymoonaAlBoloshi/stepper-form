@@ -17,35 +17,29 @@ const OptionCard = ({ plan, selectedPlan, handlePlanSelection, price }) => {
 };
 
 const Page2 = () => {
-  // State for plan selection and error message
   const [selectedPlan, setSelectedPlan] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
-  // Function to navigate back to Page 1
   const handleGoBack = () => {
-    navigate('/page1'); // Use navigate to go back to Page 1
+    navigate('/page1');
   };
 
-  // Function to handle plan selection
   const handlePlanSelection = (plan) => {
     setSelectedPlan(plan);
-    setError(''); // Clear error when a plan is selected
+    setError('')
   };
 
-  // Function to handle the next step
   const handleNextStep = () => {
     if (!selectedPlan) {
-      setError('Please select a plan!'); // Show error if no plan is selected
+      setError('Please select a plan!');
     } else {
-      // Navigate to the next page if a plan is selected
-      navigate('/nextpage'); // Use navigate to go to the next page
+      navigate('/nextpage');
     }
   };
 
   return (
     <div className="main-content">
-      {/* Title and Description */}
       <div className="content-header">
         <h1>Select your plan</h1>
         <p>You have the option of monthly or yearly billing.</p>
@@ -73,10 +67,9 @@ const Page2 = () => {
           />
         </div>
 
-        {error && <div className="error">{error}</div>} {/* Display error if any */}
+        {error && <div className="error">{error}</div>} 
       </div>
 
-      {/* Buttons Section */}
       <div className="buttons-section">
         <button className="go-back" onClick={handleGoBack}>Go Back</button>
         <button className="next-step" onClick={handleNextStep}>Next Step</button>
