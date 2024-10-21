@@ -9,6 +9,7 @@ function App() {
     <Router>
     <Routes>
       <Route path="/" element={<MainLayout />}>
+      <Route index element={<Page1 />} />
         <Route path="page1" element={<Page1 />} /> {/* Default or index route */}
         <Route path="page2" element={<Page2 />} /> 
       </Route>
