@@ -1,11 +1,11 @@
 body {
-  font-family: 'Ubuntu', sans-serif; /* Use the correct font family */
+  font-family: "Ubuntu", sans-serif; /* Use the correct font family */
   background-color: #e5edf5;
   margin: 0;
   padding: 50px;
   display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .form-container {
@@ -21,11 +21,11 @@ body {
 }
 
 .steps-sidebar {
-  background-image: url('./images/bg-sidebar-desktop.svg'); /* Path to your SVG image */
+  background-image: url("./images/bg-sidebar-desktop.svg"); /* Path to your SVG image */
   background-size: cover; /* Ensure the image covers the entire area */
   border-radius: 8px;
   padding: 20px;
-  width: 250px;  /* Fixed width */
+  width: 250px; /* Fixed width */
   height: 600px; /* Fixed height */
   flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
@@ -208,21 +208,21 @@ button:hover {
   height: 140px;
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
-  background-size: 40px 40px; 
+  background-size: 40px 40px;
   background-repeat: no-repeat;
   background-position: left 10px top 20px;
 }
 
 .plan.arcade {
-  background-image: url('./images/icon-arcade.svg'); /* Background image for Arcade */
+  background-image: url("./images/icon-arcade.svg"); /* Background image for Arcade */
 }
 
 .plan.advanced {
-  background-image: url('./images/icon-advanced.svg'); /* Background image for Advanced */
+  background-image: url("./images/icon-advanced.svg"); /* Background image for Advanced */
 }
 
 .plan.pro {
-  background-image: url('./images/icon-pro.svg'); /* Background image for Pro */
+  background-image: url("./images/icon-pro.svg"); /* Background image for Pro */
 }
 
 .plan h2 {
@@ -244,7 +244,7 @@ button:hover {
 
 .plan.selected {
   background-color: #e7e8ee; /* Dark background for selected plan */
-  color: white; 
+  color: white;
 }
 
 /* Error Message Styles */

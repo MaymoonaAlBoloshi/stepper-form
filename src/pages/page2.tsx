@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // OptionCard Component
 const OptionCard = ({ plan, selectedPlan, handlePlanSelection, price }) => {
   return (
     <label
-      className={`plan ${plan} ${selectedPlan === plan ? 'selected' : ''}`}
+      className={`plan ${plan} ${selectedPlan === plan ? "selected" : ""}`}
       onClick={() => handlePlanSelection(plan)}
     >
       <div className="plan-details">
@@ -17,26 +17,33 @@ const OptionCard = ({ plan, selectedPlan, handlePlanSelection, price }) => {
 };
 
 const Page2 = () => {
-  const [selectedPlan, setSelectedPlan] = useState('');
-  const [error, setError] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate('/page1');
+    navigate("/page1");
   };
 
   const handlePlanSelection = (plan) => {
     setSelectedPlan(plan);
-    setError('')
+    setError("");
   };
 
   const handleNextStep = () => {
     if (!selectedPlan) {
-      setError('Please select a plan!');
+      setError("Please select a plan!");
     } else {
-      navigate('/nextpage');
+      navigate("/nextpage");
     }
   };
+
+  // Array of plans
+  const plans = [
+    { plan: "arcade", price: "$9/mo" },
+    { plan: "advanced", price: "$12/mo" },
+    { plan: "pro", price: "$15/mo" },
+  ];
 
   return (
     <div className="main-content">
@@ -47,32 +54,27 @@ const Page2 = () => {
 
       <div className="plans-section">
         <div className="plans">
-          <OptionCard
-            plan="arcade"
-            selectedPlan={selectedPlan}
-            handlePlanSelection={handlePlanSelection}
-            price="$9/mo"
-          />
-          <OptionCard
-            plan="advanced"
-            selectedPlan={selectedPlan}
-            handlePlanSelection={handlePlanSelection}
-            price="$12/mo"
-          />
-          <OptionCard
-            plan="pro"
-            selectedPlan={selectedPlan}
-            handlePlanSelection={handlePlanSelection}
-            price="$15/mo"
-          />
+          {plans.map(({ plan, price }) => (
+            <OptionCard
+              key={plan} // Use plan as a unique key
+              plan={plan}
+              selectedPlan={selectedPlan}
+              handlePlanSelection={handlePlanSelection}
+              price={price}
+            />
+          ))}
         </div>
 
-        {error && <div className="error">{error}</div>} 
+        {error && <div className="error">{error}</div>}
       </div>
 
       <div className="buttons-section">
-        <button className="go-back" onClick={handleGoBack}>Go Back</button>
-        <button className="next-step" onClick={handleNextStep}>Next Step</button>
+        <button className="go-back" onClick={handleGoBack}>
+          Go Back
+        </button>
+        <button className="next-step" onClick={handleNextStep}>
+          Next Step
+        </button>
       </div>
     </div>
   );
